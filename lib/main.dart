@@ -43,28 +43,67 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("Test Title ^^"), // 상단 앱 바의 제목
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: const <Widget> [
-            DrawerHeader(
-              decoration: BoxDecoration(
-              color: Colors.blue
-              ),
-              child: Text("Drawer Header Part"),
+      // drawer: Drawer(
+      //   child: ListView(
+      //     padding: EdgeInsets.zero,
+      //     children: const <Widget> [
+      //       DrawerHeader(
+      //         decoration: BoxDecoration(
+      //         color: Colors.blue
+      //         ),
+      //         child: Text("Drawer Header Part"),
+      //       ),
+      //       ListTile(
+      //         title: Text("Menu 1"),
+      //       )
+      //     ],
+      //   ),
+      // ),
+      // body: const Center( child: Text("Hello World"), // 가운데 정렬된 텍스트 표시
+      // ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () => print("clicked"),
+      //   child: const Icon(Icons.mouse)  
+      //   ),
+      body: Container(
+        alignment: Alignment.topLeft,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width /2,
+                  height: 200,
+                  color: Colors.blue,
+                ),
+                 Container(
+                  width: MediaQuery.of(context).size.width /2,
+                  height: 200,
+                  color: Colors.red,
+                )
+              ],
             ),
-            ListTile(
-              title: Text("Menu 1"),
-            )
+             Row(
+              children: [
+                Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors.green,
+                ),
+                 Container(
+                  width: 200,
+                  height: 200,
+                  color: Colors.purple,
+                )
+              ],
+            ),
           ],
-        ),
+        )
       ),
-      body: const Center( child: Text("Hello World"), // 가운데 정렬된 텍스트 표시
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => print("clicked"),
-        child: const Icon(Icons.mouse)  
-        ),
+
     );
   }
 }
