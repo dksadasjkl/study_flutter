@@ -43,38 +43,28 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text("Test Title ^^"), // 상단 앱 바의 제목
       ),
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        color: Colors.yellow,
-        child: Stack(
-          children: [
-            Container(
-              width: 200,
-              height: 200,
-              color: Colors.black,
+        drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const <Widget> [
+            DrawerHeader(
+              decoration: BoxDecoration(
+              color: Colors.blue
+              ),
+              child: Text("Drawer Header Part"),
             ),
-            Container(
-              width: 200,
-              height: 200,
-              margin: const EdgeInsets.only(top: 50, left: 50),
-              color: Colors.red,
-            ),
-            Container(
-              width: 200,
-              height: 200,
-              margin: const EdgeInsets.only(top: 100, left: 100),
-              color: Colors.green,
-            ),
-            Container(
-              width: 200,
-              height: 200,
-              margin: const EdgeInsets.only(top: 150, left: 150),
-              color: Colors.orange,
-            ),
+            ListTile(
+              title: Text("Menu 1"),
+            )
           ],
         ),
       ),
+      body: const Center( child: Text("Hello World"), // 가운데 정렬된 텍스트 표시
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => print("clicked"),
+        child: const Icon(Icons.mouse)  
+        ),
     );
   }
 }
