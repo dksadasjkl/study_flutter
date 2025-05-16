@@ -44,30 +44,93 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text("Test Title"), // 상단 앱 바의 제목
       ),
       body: Container(
-        child: Center(
-          child: TextButton(
-            onPressed: () {
-              showDialog(
-                context: context,
-                builder:(BuildContext con) {
-                  return AlertDialog(
-                    title: const Text("Dialog Title"),
-                    content: Container(
-                      child: const Text(
-                        "Diaolg Content",                        
-                      ),
-                    ),
-                    actions: [
-                      TextButton(
-                      onPressed: () => Navigator.of(context).pop(), 
-                      child: const Text("Close"))
-                    ],
-                  );
-                }
-              );
-            },
-            child: const Text("Button"),
-          ),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                color: Colors.amber,
+              ),
+            ),
+            Align(
+              alignment: Alignment.topCenter,
+              child: Container(
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                color: Colors.blue,
+              ),
+            ),
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                color: Colors.green,
+              ),
+            ),
+            
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Container(
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                color: Colors.amber,
+              ),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                color: Colors.blue,
+              ),
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Container(
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                color: Colors.green,
+              ),
+            ),
+
+            Align(
+              alignment: Alignment.bottomLeft,
+              child: Container(
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                color: Colors.amber,
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                color: Colors.blue,
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomRight,
+              child: Container(
+                margin: const EdgeInsets.only(bottom: 100),
+                width: 100,
+                height: 100,
+                alignment: Alignment.center,
+                color: Colors.green,
+              ),
+            ),
+          ],
         ),
       ),
     );
